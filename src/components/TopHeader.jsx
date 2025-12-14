@@ -16,6 +16,9 @@ export default function TopHeader() {
 
     return (
         <div className="top-header">
+            <div className="mobile-username">
+                {currentUser?.email?.split('@')[0] || 'User'}
+            </div>
             <div className="header-actions">
                 <div className="header-profile" onClick={() => setShowDropdown(!showDropdown)}>
                     <div className="profile-avatar">

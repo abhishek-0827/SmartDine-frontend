@@ -557,6 +557,27 @@
         flex-direction: column;
         gap: 15px;
     }
+
+    /* Center Feature Cards on Mobile */
+    .features-grid {
+        justify-content: center;
+        grid-template-columns: 1fr;
+        /* Stack vertically */
+        padding: 0 10px;
+    }
+
+    .feature-card {
+        text-align: center;
+        /* Center text inside card */
+        margin: 0 auto;
+        max-width: 400px;
+        /* Prevent being too wide */
+    }
+
+    .feature-icon {
+        margin: 0 auto 20px;
+        /* Center icon */
+    }
 }
 
 @media (max-width: 480px) {

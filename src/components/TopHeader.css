@@ -11,6 +11,13 @@
     z-index: 90;
 }
 
+.mobile-username {
+    display: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #374151;
+}
+
 .header-search {
     flex: 1;
     max-width: 500px;
@@ -164,10 +171,26 @@
 }
 
 /* Mobile Devices */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .top-header {
         padding: 0 12px;
         height: 60px;
+    }
+
+    .mobile-username {
+        display: block !important;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 60%;
+        color: #000;
+        z-index: 100;
+        pointer-events: none;
+        /* Let clicks pass through if needed */
     }
 
     .header-search {
