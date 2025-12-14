@@ -1,0 +1,515 @@
+/* New Post Card Styles */
+.new-post-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Post Header */
+.new-post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+}
+
+.post-user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.post-user-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8C61 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.post-user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.post-user-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1F2937;
+}
+
+.post-user-handle {
+    font-size: 0.85rem;
+    color: #6B7280;
+}
+
+.post-menu-container {
+    position: relative;
+}
+
+.post-menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #374151;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.2s;
+}
+
+.post-menu-btn::before {
+    content: '⋮';
+}
+
+.post-menu-btn:hover {
+    color: #1F2937;
+}
+
+.post-menu-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.menu-item {
+    width: 100%;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #374151;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu-item:hover {
+    background: #F3F4F6;
+}
+
+.menu-item.delete {
+    color: #DC2626;
+}
+
+.menu-item.delete:hover {
+    background: #FEE2E2;
+}
+
+.menu-item:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Post Caption */
+.new-post-caption {
+    padding: 0 20px 12px 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #374151;
+}
+
+/* Restaurant Tag */
+.restaurant-tag {
+    margin: 0 20px 16px 20px;
+    padding: 12px 16px;
+    background: #FEF3C7;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.restaurant-icon {
+    font-size: 1.1rem;
+}
+
+.restaurant-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #78350F;
+}
+
+.restaurant-location {
+    font-size: 0.85rem;
+    color: #92400E;
+    margin-left: 4px;
+}
+
+/* Post Media */
+.new-post-media {
+    position: relative;
+    width: 100%;
+    background: #F3F4F6;
+}
+
+.new-post-media img,
+.new-post-media video {
+    width: 100%;
+    display: block;
+    max-height: 600px;
+    object-fit: contain;
+}
+
+.media-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.media-nav-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.media-nav-btn.prev {
+    left: 12px;
+}
+
+.media-nav-btn.next {
+    right: 12px;
+}
+
+.media-indicator {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Post Actions */
+.new-post-actions {
+    display: flex;
+    gap: 16px;
+    padding: 12px 20px;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.action-icon-btn {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    padding: 4px;
+}
+
+.action-icon-btn:hover {
+    transform: scale(1.1);
+}
+
+.action-icon-btn.liked {
+    animation: heartBeat 0.3s ease;
+}
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Post Stats */
+.post-stats {
+    padding: 12px 20px;
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+    color: #6B7280;
+}
+
+.stat-item {
+    font-weight: 500;
+}
+
+/* Comment Input */
+.comment-input-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    border-top: 1px solid #F3F4F6;
+}
+
+.comment-user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8C61 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.comment-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+    color: #374151;
+}
+
+.comment-input::placeholder {
+    color: #9CA3AF;
+}
+
+.comment-submit-btn {
+    padding: 8px 20px;
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8C61 100%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.comment-submit-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.comment-submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.send-icon {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+}
+
+/* Comments List */
+.comments-list {
+    padding: 12px 20px;
+    border-top: 1px solid #F3F4F6;
+}
+
+.comment-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.comment-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8C61 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+}
+
+.comment-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.comment-username {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1F2937;
+}
+
+.comment-text {
+    font-size: 0.9rem;
+    color: #374151;
+    line-height: 1.4;
+}
+
+.view-all-comments {
+    background: none;
+    border: none;
+    color: #6B7280;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 4px 0;
+    margin-top: 4px;
+}
+
+.view-all-comments:hover {
+    color: #FF6B35;
+}
+
+/* Post Tags */
+.new-post-tags {
+    padding: 12px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.new-tag {
+    font-size: 0.85rem;
+    color: #FF6B35;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .new-post-header {
+        padding: 12px 16px;
+    }
+
+    .new-post-caption {
+        padding: 0 16px 12px 16px;
+    }
+
+    .restaurant-tag {
+        margin: 0 16px 12px 16px;
+    }
+
+    .new-post-actions {
+        padding: 10px 16px;
+    }
+
+    .post-stats {
+        padding: 10px 16px;
+    }
+
+    .comment-input-section {
+        padding: 10px 16px;
+    }
+
+    .new-post-tags {
+        padding: 10px 16px;
+    }
+
+    .new-post-media img,
+    .new-post-media video {
+        max-height: 400px;
+    }
+}
+
+/* Delete Confirmation Dialog */
+.delete-confirm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.delete-confirm-dialog {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.delete-confirm-dialog h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1F2937;
+}
+
+.delete-confirm-dialog p {
+    margin: 0 0 24px 0;
+    font-size: 0.95rem;
+    color: #6B7280;
+    line-height: 1.5;
+}
+
+.delete-confirm-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.btn-cancel,
+.btn-delete {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+}
+
+.btn-cancel {
+    background: #F3F4F6;
+    color: #374151;
+}
+
+.btn-cancel:hover {
+    background: #E5E7EB;
+}
+
+.btn-delete {
+    background: #DC2626;
+    color: white;
+}
+
+.btn-delete:hover:not(:disabled) {
+    background: #B91C1C;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.btn-delete:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

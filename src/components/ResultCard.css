@@ -1,0 +1,702 @@
+/* New Result Card Design */
+.new-result-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid #F3F4F6;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.new-result-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Container */
+.card-image-container {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, #FFF4F0 0%, #FFE8DD 100%);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.card-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #FFF4F0 0%, #FFE8DD 100%);
+}
+
+.image-icon {
+    font-size: 4rem;
+    opacity: 0.3;
+}
+
+/* Match Badge */
+.match-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #FF6B35;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+.match-icon {
+    font-size: 1rem;
+}
+
+.match-text {
+    font-size: 0.85rem;
+}
+
+/* Open Now Badge */
+.open-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #10B981;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+/* Card Content */
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.restaurant-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 8px;
+}
+
+.restaurant-meta {
+    font-size: 0.9rem;
+    color: #6B7280;
+    margin-bottom: 10px;
+}
+
+.cuisine-text {
+    font-weight: 500;
+}
+
+.price-level {
+    color: #9CA3AF;
+}
+
+.rating-distance {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.rating-new {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #F59E0B;
+}
+
+.distance-new {
+    font-size: 0.9rem;
+    color: #6B7280;
+}
+
+/* Craving Tags */
+.craving-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.craving-tag {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+/* Suggested Dish Box */
+.suggested-dish-box {
+    background: #FEF3C7;
+    border-left: 3px solid #F59E0B;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.suggested-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #92400E;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.suggested-dish {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #78350F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.suggested-price {
+    font-weight: 600;
+    color: #92400E;
+    font-size: 0.95rem;
+}
+
+/* AI Reason */
+.ai-reason {
+    font-size: 0.95rem;
+    color: #6B7280;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding-left: 12px;
+    border-left: 3px solid #FF6B35;
+}
+
+/* Action Buttons */
+.card-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.action-btn-new {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.action-btn-new.primary {
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8C61 100%);
+    color: white;
+    flex: 1;
+}
+
+.action-btn-new.primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.action-btn-new.secondary {
+    background: #F3F4F6;
+    color: #374151;
+}
+
+.action-btn-new.secondary:hover:not(:disabled) {
+    background: #E5E7EB;
+}
+
+.action-btn-new:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Menu Modal */
+.menu-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.menu-modal {
+    background: white;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 85vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.menu-modal-header {
+    padding: 24px 28px;
+    border-bottom: 1px solid #E5E7EB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8C61 100%);
+    color: white;
+}
+
+.menu-modal-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.modal-close-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.modal-close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.menu-modal-content {
+    padding: 24px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.menu-items-grid-modal {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.menu-item-modal {
+    background: #F9FAFB;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #E5E7EB;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-item-modal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item-modal .menu-item-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1F2937;
+}
+
+.menu-item-modal .menu-item-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #FF6B35;
+}
+
+.menu-modal-content .no-menu {
+    text-align: center;
+    padding: 40px 20px;
+    color: #9CA3AF;
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-modal {
+        max-height: 90vh;
+    }
+
+    .menu-items-grid-modal {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-modal-header h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Menu Section */
+.menu-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #E5E7EB;
+}
+
+.menu-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 15px;
+}
+
+.menu-items-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.menu-item-new {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #F9FAFB;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.menu-item-new:hover {
+    background: #F3F4F6;
+}
+
+.menu-item-name {
+    font-size: 0.95rem;
+    color: #374151;
+    font-weight: 500;
+}
+
+.menu-item-price {
+    font-size: 0.95rem;
+    color: #FF6B35;
+    font-weight: 700;
+}
+
+.no-menu {
+    text-align: center;
+    color: #9CA3AF;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* Similar Section */
+.similar-section-new {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #E5E7EB;
+}
+
+.similar-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 15px;
+}
+
+.similar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.similar-item {
+    padding: 12px;
+    background: #F9FAFB;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+    transition: all 0.2s;
+}
+
+.similar-item:hover {
+    background: white;
+    border-color: #FF6B35;
+    transform: translateY(-2px);
+}
+
+.similar-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 6px;
+}
+
+.similar-rating {
+    font-size: 0.85rem;
+    color: #F59E0B;
+    margin-bottom: 4px;
+}
+
+.similar-distance {
+    font-size: 0.85rem;
+    color: #6B7280;
+}
+
+/* Responsive */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .menu-items-grid-modal {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .similar-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .new-result-card {
+        border-radius: 12px;
+        margin-bottom: 16px;
+    }
+
+    .card-image-container {
+        height: 180px;
+    }
+
+    .card-content {
+        padding: 16px;
+    }
+
+    .restaurant-name {
+        font-size: 1.2rem;
+    }
+
+    .card-actions {
+        flex-direction: column;
+    }
+
+    .action-btn-new {
+        width: 100%;
+    }
+
+    .similar-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-modal {
+        max-height: 90vh;
+    }
+
+    .menu-items-grid-modal {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-modal-header h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+    .new-result-card {
+        border-radius: 10px;
+        margin-bottom: 14px;
+    }
+
+    .new-result-card:hover {
+        transform: none;
+    }
+
+    .card-image-container {
+        height: 160px;
+    }
+
+    .match-badge,
+    .open-badge {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+        top: 10px;
+    }
+
+    .match-badge {
+        left: 10px;
+    }
+
+    .open-badge {
+        right: 10px;
+    }
+
+    .card-content {
+        padding: 14px;
+    }
+
+    .restaurant-name {
+        font-size: 1.1rem;
+    }
+
+    .restaurant-meta {
+        font-size: 0.85rem;
+    }
+
+    .rating-distance {
+        gap: 12px;
+    }
+
+    .craving-tags {
+        gap: 6px;
+    }
+
+    .craving-tag {
+        padding: 5px 12px;
+        font-size: 0.8rem;
+    }
+
+    .suggested-dish-box {
+        padding: 10px 12px;
+    }
+
+    .suggested-dish {
+        font-size: 0.95rem;
+    }
+
+    .ai-reason {
+        font-size: 0.9rem;
+        padding-left: 10px;
+    }
+
+    .action-btn-new {
+        padding: 12px 16px;
+        font-size: 0.85rem;
+        min-height: 44px;
+    }
+
+    /* Menu Modal Mobile */
+    .menu-modal-overlay {
+        padding: 0;
+        align-items: flex-end;
+    }
+
+    .menu-modal {
+        max-width: 100%;
+        max-height: 95vh;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .menu-modal-header {
+        padding: 18px 20px;
+    }
+
+    .menu-modal-header h2 {
+        font-size: 1.1rem;
+    }
+
+    .modal-close-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1.2rem;
+    }
+
+    .menu-modal-content {
+        padding: 18px;
+    }
+
+    .menu-item-modal {
+        padding: 14px;
+    }
+
+    .menu-item-modal .menu-item-name {
+        font-size: 0.9rem;
+    }
+
+    .menu-item-modal .menu-item-price {
+        font-size: 1rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .card-image-container {
+        height: 140px;
+    }
+
+    .restaurant-name {
+        font-size: 1rem;
+    }
+
+    .match-badge,
+    .open-badge {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+        top: 8px;
+    }
+
+    .card-content {
+        padding: 12px;
+    }
+
+    .craving-tag {
+        padding: 4px 10px;
+        font-size: 0.75rem;
+    }
+
+    .action-btn-new {
+        padding: 11px 14px;
+        font-size: 0.8rem;
+    }
+
+    .menu-modal-header {
+        padding: 16px 18px;
+    }
+
+    .menu-modal-content {
+        padding: 16px;
+    }
+}
+
+/* Touch-friendly enhancements */
+@media (hover: none) and (pointer: coarse) {
+
+    .action-btn-new,
+    .modal-close-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .new-result-card:hover {
+        transform: none;
+    }
+
+    .action-btn-new:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+    }
+
+    .menu-item-modal:hover {
+        transform: none;
+    }
+
+    .menu-item-modal:active {
+        transform: scale(0.98);
+    }
+}

@@ -1,0 +1,68 @@
+/* Feed Page Styles */
+.feed-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.feed-page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.feed-page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 8px;
+}
+
+.feed-page-subtitle {
+    font-size: 1.1rem;
+    color: #6B7280;
+}
+
+.feed-posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.feed-loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.1rem;
+    color: #6B7280;
+}
+
+.no-posts {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #E5E7EB;
+}
+
+.no-posts p {
+    font-size: 1.1rem;
+    color: #9CA3AF;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .feed-page {
+        padding: 0 15px;
+    }
+
+    .feed-page-title {
+        font-size: 2rem;
+    }
+
+    .feed-page-subtitle {
+        font-size: 1rem;
+    }
+
+    .feed-posts-container {
+        gap: 20px;
+    }
+}
