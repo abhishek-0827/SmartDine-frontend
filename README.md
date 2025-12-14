@@ -23,7 +23,7 @@ This is the **Frontend** for the Smart Dine application, built with **React**, *
 
 1.  Create a `.env` file in the root of the frontend directory (`frontend/smartdine/.env`):
     ```env
-    VITE_API_BASE_URL=http://localhost:4000
+    VITE_API_URL=http://localhost:4000
     VITE_SUPABASE_URL=your_supabase_url
     VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
     ```

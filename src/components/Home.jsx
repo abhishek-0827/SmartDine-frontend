@@ -268,7 +268,8 @@ function Home() {
         } catch (error) {
             console.error('Failed to load route:', error);
             console.error('Error details:', error.response?.data);
-            alert('Failed to load route. Please try again.');
+            const errorMessage = error.response?.data?.error || error.message || 'Unknown error';
+            alert(`Failed to load route: ${errorMessage}. \n\nCheck if your Backend URL is correct and the server is running.`);
         } finally {
             setLoadingRoute(false);
         }
