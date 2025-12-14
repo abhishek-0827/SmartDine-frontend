@@ -1,5 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="50" fill="#FF6B35" />
-  <circle cx="50" cy="50" r="40" fill="#FFFFFF" />
-  <text x="50" y="70" font-family="Arial, sans-serif" font-size="65" text-anchor="middle" fill="#FF6B35">🍽️</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Squircle Background -->
+  <rect x="10" y="10" width="100" height="100" rx="35" fill="#FF6B35" />
+  
+  <!-- Icon Group: Light Lavender/White with soft shadow look -->
+  <g fill="#E0E7FF">
+    <!-- Fork -->
+    <path d="M35 35 L35 60 Q35 70 40 70 L40 90 A 4 4 0 0 0 48 90 L48 70 Q53 70 53 60 L53 35 A 2 2 0 0 0 35 35 M39 35 L39 55 M44 35 L44 55 M49 35 L49 55" stroke="#FF6B35" stroke-width="0" />
+    <!-- Fork Handle -->
+    <rect x="41" y="65" width="6" height="25" rx="3" />
+    <!-- Fork Tines Base -->
+    <path d="M35 35 L 35 55 Q 35 68 44 68 Q 53 68 53 55 L 53 35" />
+    
+    <!-- Knife -->
+    <path d="M80 35 L80 90 A 4 4 0 0 1 72 90 L72 35 Q 72 30 80 35" /> 
+    <rect x="74" y="35" width="8" height="55" rx="4" />
+
+    <!-- Plate (Center) -->
+    <circle cx="60" cy="62" r="18" />
+  </g>
+  
+  <!-- Better shapes for Fork/Knife/Plate to match 3D cartoon style easier -->
+  <g transform="translate(0, 5)">
+     <!-- Fork Left -->
+     <path d="M35 35 L35 58 C35 64 38 66 42 66 L42 85 C42 87 45 87 45 85 L45 66 C49 66 52 64 52 58 L52 35 M39 35 L39 55 M44 35 L44 55 M48 35 L48 55" fill="#DDD6FE" stroke="#DDD6FE" stroke-width="4" stroke-linecap="round" />
+     
+     <!-- Plate Center -->
+     <circle cx="60" cy="60" r="18" fill="#DDD6FE" />
+     <circle cx="60" cy="60" r="12" fill="#EDE9FE" /> <!-- Inner indentation -->
+
+     <!-- Knife Right -->
+     <path d="M80 35 L80 85 C80 87 77 87 77 85 L77 35 Q77 30 80 35" fill="#DDD6FE" stroke="#DDD6FE" stroke-width="4" stroke-linecap="round" />
+  </g>
 </svg>
