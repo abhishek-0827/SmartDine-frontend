@@ -24,6 +24,11 @@ export default function DiscoveryPage() {
         });
     };
 
+    const capitalizePriceLevel = (priceLevel) => {
+        if (!priceLevel) return '';
+        return priceLevel.charAt(0).toUpperCase() + priceLevel.slice(1);
+    };
+
     useEffect(() => {
         fetchRestaurants();
     }, [currentPage, searchQuery]);
@@ -188,7 +193,7 @@ export default function DiscoveryPage() {
                                     </div>
                                     <div className="dish-info">
                                         <span className="rating">⭐ {item.restaurant_rating}</span>
-                                        <span className="price">{item.restaurant_price_level}</span>
+                                        <span className="price">{capitalizePriceLevel(item.restaurant_price_level)}</span>
                                     </div>
                                 </div>
                             ) : (
@@ -233,7 +238,7 @@ export default function DiscoveryPage() {
 
                                             <div className="card-info">
                                                 <span className="rating">⭐ {item.rating}</span>
-                                                <span className="price">{item.price_level}</span>
+                                                <span className="price">{capitalizePriceLevel(item.price_level)}</span>
                                             </div>
 
                                             <div className="card-tags">

@@ -53,9 +53,9 @@ function Home() {
     ]
 
     const budgetOptions = [
-        { id: 'budget', label: 'Budget', emoji: '💵', color: '#D1FAE5' },
-        { id: 'medium', label: 'Medium', emoji: '💰', color: '#DBEAFE' },
-        { id: 'premium', label: 'Premium', emoji: '💎', color: '#E0E7FF' },
+        { id: 'affordable', label: 'Affordable', emoji: '💵', color: '#D1FAE5' },
+        { id: 'standard', label: 'Standard', emoji: '💰', color: '#DBEAFE' },
+        { id: 'exclusive', label: 'Exclusive', emoji: '💎', color: '#E0E7FF' },
     ]
 
     useEffect(() => {
@@ -405,16 +405,16 @@ function Home() {
                                 </div>
                             </div>
 
-                            {/* Step 4: Optional Details */}
+                            {/* Step 4: Add Details */}
                             <div className="search-step">
                                 <div className="step-header">
                                     <span className="step-number">4</span>
                                     <span className="step-emoji">✨</span>
-                                    <span className="step-title">Add details (optional)</span>
+                                    <span className="step-title">Add Details</span>
                                 </div>
                                 <textarea
                                     className="details-input"
-                                    placeholder='Optional: Add more details like "near me", "quick lunch", "romantic dinner"...'
+                                    placeholder='Add More Details Like "Near Me", "Quick Lunch", "Romantic Dinner"...'
                                     value={optionalDetails}
                                     onChange={(e) => setOptionalDetails(e.target.value)}
                                     rows="3"

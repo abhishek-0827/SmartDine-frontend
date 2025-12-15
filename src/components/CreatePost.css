@@ -16,7 +16,8 @@
     color: #1F2937;
 }
 
-/* Tabs */
+/* Tabs - REMOVED (No longer using tabs) */
+/*
 .create-post-tabs {
     display: flex;
     justify-content: center;
@@ -45,6 +46,7 @@
     color: #FF6B35;
     border-bottom-color: #FF6B35;
 }
+*/
 
 /* Create Post Card */
 .create-post-card {
@@ -335,7 +337,8 @@
     .create-post-page {
         max-width: 100%;
         padding: 15px;
-        margin-bottom: 80px; /* Space for bottom navigation */
+        margin-bottom: 80px;
+        /* Space for bottom navigation */
     }
 
     .create-post-header {
@@ -346,6 +349,7 @@
         font-size: 1.8rem;
     }
 
+    /* Tabs removed
     .create-post-tabs {
         gap: 30px;
         margin-bottom: 20px;
@@ -355,6 +359,7 @@
         font-size: 0.95rem;
         padding: 10px 0;
     }
+    */
 
     .create-post-card {
         padding: 18px;
@@ -450,9 +455,11 @@
         font-size: 1.6rem;
     }
 
+    /* Tabs removed
     .create-post-tabs {
         gap: 25px;
     }
+    */
 
     .create-post-card {
         padding: 15px;
@@ -485,7 +492,8 @@
 
 /* Touch-friendly enhancements for mobile devices */
 @media (hover: none) and (pointer: coarse) {
-    .create-tab,
+
+    /* .create-tab, */
     .media-upload-btn,
     .btn-publish,
     .remove-preview-btn {

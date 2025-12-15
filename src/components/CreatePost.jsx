@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 import './CreatePost.css';
 
 export default function CreatePost() {
-    const [activeTab, setActiveTab] = useState('post');
     const [files, setFiles] = useState([]);
     const [previews, setPreviews] = useState([]);
     const [caption, setCaption] = useState('');
@@ -34,7 +33,7 @@ export default function CreatePost() {
         const selectedFiles = Array.from(e.target.files);
 
         if (selectedFiles.length > 10) {
-            setError('Maximum 10 images allowed');
+            setError('Maximum 10 files allowed');
             return;
         }
 
@@ -44,19 +43,6 @@ export default function CreatePost() {
 
         if (validFiles.length !== selectedFiles.length) {
             setError('Only images and videos are allowed');
-            return;
-        }
-
-        const hasImage = validFiles.some(f => f.type.startsWith('image/'));
-        const hasVideo = validFiles.some(f => f.type.startsWith('video/'));
-
-        if (hasImage && hasVideo) {
-            setError('Cannot mix images and videos in one post');
-            return;
-        }
-
-        if (hasVideo && validFiles.length > 1) {
-            setError('Only one video per post');
             return;
         }
 
@@ -102,22 +88,6 @@ export default function CreatePost() {
                 <h1 className="create-post-title">Create Post</h1>
             </div>
 
-            {/* Tabs */}
-            <div className="create-post-tabs">
-                <button
-                    className={`create-tab ${activeTab === 'post' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('post')}
-                >
-                    Post
-                </button>
-                <button
-                    className={`create-tab ${activeTab === 'reel' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('reel')}
-                >
-                    Reel
-                </button>
-            </div>
-
             {/* Create Post Card */}
             <div className="create-post-card">
                 {/* User Info */}
@@ -156,11 +126,11 @@ export default function CreatePost() {
                     {/* Media Upload Buttons */}
                     <div className="create-media-buttons">
                         <label className="media-upload-btn">
-                            <span>{activeTab === 'reel' ? '🎥 Add Video' : '📷 Add Photo'}</span>
+                            <span>📷 Add Photo/Video</span>
                             <input
                                 type="file"
-                                accept={activeTab === 'reel' ? 'video/*' : 'image/*'}
-                                multiple={activeTab === 'post'}
+                                accept="image/*,video/*"
+                                multiple
                                 onChange={handleFileChange}
                                 style={{ display: 'none' }}
                             />
@@ -207,7 +177,7 @@ export default function CreatePost() {
                             className="btn-publish"
                             disabled={loading || files.length === 0}
                         >
-                            {loading ? '⏳ Publishing...' : `🚀 Publish ${activeTab === 'reel' ? 'Reel' : 'Post'}`}
+                            {loading ? '⏳ Publishing...' : '🚀 Publish Post'}
                         </button>
                     </div>
                 </form>
