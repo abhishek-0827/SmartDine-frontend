@@ -414,7 +414,7 @@ function Home() {
                                 </div>
                                 <textarea
                                     className="details-input"
-                                    placeholder='Add More Details Like "Near Me", "Quick Lunch", "Romantic Dinner"...'
+                                    placeholder='Add More Details Like "Quick Lunch", "Romantic Dinner"...'
                                     value={optionalDetails}
                                     onChange={(e) => setOptionalDetails(e.target.value)}
                                     rows="3"

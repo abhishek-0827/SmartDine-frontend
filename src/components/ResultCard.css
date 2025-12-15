@@ -17,44 +17,31 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Image Container */
-.card-image-container {
-    position: relative;
-    width: 100%;
-    height: 220px;
-    background: linear-gradient(135deg, #FFF4F0 0%, #FFE8DD 100%);
-    overflow: hidden;
-    flex-shrink: 0;
-}
-
-.card-image-placeholder {
-    width: 100%;
-    height: 100%;
+/* Card Content */
+.card-content {
+    padding: 20px;
     display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.header-badges {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #FFF4F0 0%, #FFE8DD 100%);
+    margin-bottom: 16px;
 }
 
-.image-icon {
-    font-size: 4rem;
-    opacity: 0.3;
-}
-
-/* Match Badge */
-.match-badge {
-    position: absolute;
-    top: 12px;
-    left: 12px;
+.match-badge-new {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     background: #FF6B35;
     color: white;
     padding: 6px 12px;
     border-radius: 20px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-weight: 700;
     font-size: 0.85rem;
+    font-weight: 600;
     box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
 }
 
@@ -66,34 +53,25 @@
     font-size: 0.85rem;
 }
 
-/* Open Now Badge */
-.open-badge {
-    position: absolute;
-    top: 12px;
-    right: 12px;
+.open-badge-new {
     background: #10B981;
     color: white;
     padding: 6px 12px;
     border-radius: 20px;
+    font-size: 0.85rem;
     font-weight: 600;
-    font-size: 0.8rem;
     box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
 }
 
-/* Card Content */
-.card-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.restaurant-name {
+.restaurant-name-new {
     font-size: 1.4rem;
     font-weight: 700;
     color: #1F2937;
-    margin-bottom: 8px;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
 }
+
+
 
 .restaurant-meta {
     font-size: 0.9rem;
@@ -480,16 +458,12 @@
         margin-bottom: 16px;
     }
 
-    .card-image-container {
-        height: 180px;
-    }
-
     .card-content {
         padding: 16px;
     }
 
-    .restaurant-name {
-        font-size: 1.2rem;
+    .restaurant-name-new {
+        font-size: 1.3rem;
     }
 
     .card-actions {
@@ -528,31 +502,22 @@
         transform: none;
     }
 
-    .card-image-container {
-        height: 160px;
-    }
-
-    .match-badge,
-    .open-badge {
-        padding: 5px 10px;
-        font-size: 0.75rem;
-        top: 10px;
-    }
-
-    .match-badge {
-        left: 10px;
-    }
-
-    .open-badge {
-        right: 10px;
-    }
-
     .card-content {
         padding: 14px;
     }
 
-    .restaurant-name {
-        font-size: 1.1rem;
+    .header-badges {
+        margin-bottom: 12px;
+    }
+
+    .match-badge-new,
+    .open-badge-new {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+
+    .restaurant-name-new {
+        font-size: 1.15rem;
     }
 
     .restaurant-meta {
@@ -636,23 +601,18 @@
 
 /* Small Mobile */
 @media (max-width: 480px) {
-    .card-image-container {
-        height: 140px;
-    }
-
-    .restaurant-name {
-        font-size: 1rem;
-    }
-
-    .match-badge,
-    .open-badge {
-        padding: 4px 8px;
-        font-size: 0.7rem;
-        top: 8px;
-    }
-
     .card-content {
         padding: 12px;
+    }
+
+    .match-badge-new,
+    .open-badge-new {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+
+    .restaurant-name-new {
+        font-size: 1.05rem;
     }
 
     .craving-tag {

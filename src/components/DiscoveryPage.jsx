@@ -221,12 +221,15 @@ export default function DiscoveryPage() {
                                             </div>
                                         </div>
                                     ) : (
-                                        // Normal Card View
+                                        // Normal Card View - Clean White Card
                                         <>
-                                            <div className="card-header">
-                                                <h3>{item.name}</h3>
+                                            {/* Badges at Top */}
+                                            <div className="header-badges-discovery">
                                                 {getInteractionBadge(item.user_interaction)}
                                             </div>
+
+                                            {/* Restaurant Name */}
+                                            <h3 className="discovery-restaurant-name">{item.name}</h3>
 
                                             <div className="card-cuisines">
                                                 {item.cuisines.map((cuisine, idx) => (

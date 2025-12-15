@@ -117,9 +117,21 @@
     font-size: 0.9rem;
     color: #374151;
     transition: background 0.2s;
+    cursor: pointer;
 }
 
 .dropdown-item:hover {
+    background: #F9FAFB;
+}
+
+/* Link styling within dropdown */
+.profile-dropdown a.dropdown-item {
+    text-decoration: none;
+    color: #374151;
+    display: block;
+}
+
+.profile-dropdown a.dropdown-item:hover {
     background: #F9FAFB;
 }
 

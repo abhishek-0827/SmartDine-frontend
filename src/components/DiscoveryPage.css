@@ -67,16 +67,29 @@
 
 .restaurant-card {
     background: white;
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid #F3F4F6;
     transition: all 0.3s ease;
-    cursor: pointer;
 }
 
 .restaurant-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Badges at Top */
+.header-badges-discovery {
+    margin-bottom: 16px;
+}
+
+.discovery-restaurant-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1F2937;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
 }
 
 /* Dish Card */
@@ -152,19 +165,7 @@
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 12px;
-}
 
-.card-header h3 {
-    font-size: 1.3rem;
-    color: #333;
-    margin: 0;
-    flex: 1;
-}
 
 /* Interaction Badges */
 .badge {
@@ -523,9 +524,16 @@
         font-size: 0.9rem;
     }
 
-    .dish-header h3,
-    .card-header h3 {
-        font-size: 1.2rem;
+    .discovery-card-header {
+        padding: 16px;
+    }
+
+    .discovery-restaurant-name {
+        font-size: 1.3rem;
+    }
+
+    .discovery-card-content {
+        padding: 16px;
     }
 
     .menu-view-content {
@@ -581,16 +589,16 @@
         transform: none;
     }
 
-    .dish-header,
-    .card-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+    .discovery-card-header {
+        padding: 14px;
     }
 
-    .dish-header h3,
-    .card-header h3 {
+    .discovery-restaurant-name {
         font-size: 1.15rem;
+    }
+
+    .discovery-card-content {
+        padding: 14px;
     }
 
     .dish-price {
@@ -698,9 +706,16 @@
         padding: 14px;
     }
 
-    .dish-header h3,
-    .card-header h3 {
+    .discovery-card-header {
+        padding: 12px;
+    }
+
+    .discovery-restaurant-name {
         font-size: 1.05rem;
+    }
+
+    .discovery-card-content {
+        padding: 12px;
     }
 
     .dish-price {

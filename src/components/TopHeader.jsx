@@ -8,6 +8,7 @@ export default function TopHeader() {
     const { currentUser, logout } = useAuth();
     const [showDropdown, setShowDropdown] = useState(false);
     const [totalUnreadCount, setTotalUnreadCount] = useState(0);
+    const [userProfile, setUserProfile] = useState(null);
 
     useEffect(() => {
         if (!currentUser) return;
@@ -27,6 +28,25 @@ export default function TopHeader() {
         return () => unsubscribe();
     }, [currentUser]);
 
+    // Fetch user profile
+    useEffect(() => {
+        async function fetchProfile() {
+            if (currentUser) {
+                try {
+                    const { doc, getDoc } = await import('firebase/firestore');
+                    const { db } = await import('../firebase');
+                    const docSnap = await getDoc(doc(db, 'users', currentUser.uid));
+                    if (docSnap.exists()) {
+                        setUserProfile(docSnap.data());
+                    }
+                } catch (e) {
+                    console.error('Profile fetch error:', e);
+                }
+            }
+        }
+        fetchProfile();
+    }, [currentUser]);
+
     const handleLogout = async () => {
         try {
             await logout();
@@ -38,7 +58,7 @@ export default function TopHeader() {
     return (
         <div className="top-header">
             <div className="mobile-username">
-                {currentUser?.email?.split('@')[0] || 'User'}
+                {userProfile?.displayName || userProfile?.smartdineId || currentUser?.email?.split('@')[0] || 'User'}
             </div>
             <div className="header-actions">
                 <Link to="/chat" className="header-messages-btn">
@@ -55,8 +75,12 @@ export default function TopHeader() {
                         <div className="profile-dropdown">
                             <div className="dropdown-item">{currentUser?.email}</div>
                             <div className="dropdown-divider"></div>
+                            <Link to="/profile" className="dropdown-item" onClick={() => setShowDropdown(false)}>
+                                👤 Profile
+                            </Link>
+                            <div className="dropdown-divider"></div>
                             <div className="dropdown-item" onClick={handleLogout}>
-                                Logout
+                                🚪 Logout
                             </div>
                         </div>
                     )}

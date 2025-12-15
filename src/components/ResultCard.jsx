@@ -67,30 +67,21 @@ function ResultCard({ result, onDirectionsClick, onSimilarClick, onMenuClick }) 
 
     return (
         <div className="new-result-card">
-            {/* Restaurant Image with Badges */}
-            <div className="card-image-container">
-                <div className="card-image-placeholder">
-                    {/* Placeholder for restaurant image */}
-                    <span className="image-icon">🍽️</span>
-                </div>
-
-                {/* Match Badge */}
-                <div className="match-badge">
-                    <span className="match-icon">🎯</span>
-                    <span className="match-text">{matchPercentage}% Match</span>
-                </div>
-
-                {/* Open Now Badge */}
-                {isOpenNow && (
-                    <div className="open-badge">
-                        Open Now
-                    </div>
-                )}
-            </div>
-
             {/* Restaurant Info */}
             <div className="card-content">
-                <h3 className="restaurant-name">{result.name}</h3>
+                {/* Badges at Top */}
+                <div className="header-badges">
+                    <div className="match-badge-new">
+                        <span className="match-icon">🎯</span>
+                        <span className="match-text">{matchPercentage}% Match</span>
+                    </div>
+                    {isOpenNow && (
+                        <div className="open-badge-new">Open Now</div>
+                    )}
+                </div>
+
+                {/* Restaurant Name */}
+                <h3 className="restaurant-name-new">{result.name}</h3>
 
                 <div className="restaurant-meta">
                     <span className="cuisine-text">
