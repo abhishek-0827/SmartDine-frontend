@@ -49,10 +49,10 @@ export default function Sidebar() {
     const menuItems = [
         { path: '/home', icon: '🏠', label: 'Home' },
         { path: '/discover', icon: '🔍', label: 'Discover' },
+        { path: '/create-post', icon: '➕', label: 'Create' },
         { path: '/feed', icon: '📱', label: 'Feed' },
         { path: '/friends', icon: '👥', label: 'Friends', badge: friendRequestCount },
         { path: '/chat', icon: '💬', label: 'Messages', badge: totalUnreadCount },
-        { path: '/create-post', icon: '➕', label: 'Create Post' },
     ];
 
     const bottomItems = [
